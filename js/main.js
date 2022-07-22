@@ -1,5 +1,5 @@
 //#region Declaration
-let url = "https://monaelshikh.github.io/Expenses-chart-component/data/data.json";
+let productionUrl = "https://monaelshikh.github.io/Expenses-chart-component/data/data.json";
 // let url = "./data/data.json";
 
 let chartDiv = document.querySelector(".chart");
@@ -10,7 +10,7 @@ const dayOfWeek = weekDays[new Date().getDay()];
 //#region  Functions
 // function to get data from json file
 async function getData() {
-    let result = await fetch(url);
+    let result = await fetch(productionUrl);
     let data = await result.json();
     createChart(data);
 }
