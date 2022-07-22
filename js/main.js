@@ -1,5 +1,5 @@
 //#region Declaration
-let url = "../data/data.json";
+let url = "./data/data.json";
 let chartDiv = document.querySelector(".chart");
 let weekDays = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 const dayOfWeek = weekDays[new Date().getDay()];
