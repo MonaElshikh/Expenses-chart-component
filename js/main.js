@@ -1,5 +1,5 @@
 //#region Declaration
-let url = "https://monaelshikh.github.io/data/data.json";
+let url = "https://monaelshikh.github.io/Expenses-chart-component/data/data.json";
 // let url = "./data/data.json";
 
 let chartDiv = document.querySelector(".chart");
