@@ -2,16 +2,16 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
- }
- :root {
+}
+:root {
     --pale-orange:#f7e9dc;
     --soft-red:#ec755d;
     --Cyan: #fffcf7;
-    --cream:#c3dcdf;
+    --cream:#76b5bc;
     --dark-brown:#312414;
     --mid-brown:#9a948c;
     --border-radius:10px;
- }
+}
 body {
     font-family: 'DM Sans', sans-serif;
     font-size: 18px;
@@ -19,10 +19,11 @@ body {
 .main {
     background-color:var(--pale-orange) ;
     padding: 30px 15px;
+    min-height: 100vh;
 }
 .bar-chart {
     padding: 10px 5px;
-    margin: 50px auto;
+    margin: 55px auto;
 }
 .balance {
     display: flex;
@@ -46,7 +47,7 @@ body {
 .details {
     background-color: var(--Cyan);
     border-radius: var(--border-radius);
-    padding: 15px 20px;
+    padding: 20px 20px ;
     margin-top: 15px;
 }
 .details h1
@@ -54,36 +55,50 @@ body {
     font-size: 20px;
     color: var(--dark-brown);
     font-weight: bold;
-    margin: 5px 0px 15px;
+    margin: 5px 0px 25px;
 }
 .chart {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     padding: 20px 0px;
 }
 .chart .day {
     position: relative;
     width: 30px;
-    height:60px ;
-    border-radius: 5px;
-    background-color: var(--soft-red);
     cursor: pointer;
 }
+.day .content {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--soft-red);
+}
+.day .content.active {
+    background-color: var(--cream);
+}
 .day .amount {
-    width: 35px;
-    padding: 5px 10px;
+    width: 45px;
+    padding: 5px;
     background-color: var(--dark-brown);
-    border-radius: var(--border-radius);
+    border-radius: 3px;
     color: var(--Cyan);
     position: absolute;
     margin-right: 5px;
-    top: -25px;
-    left: -3px;
-    display: flex;
+    top: -27px;
+    left: 50%;
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 10px;
-    opacity: 0;
+    transition: .3s;
+    transform: translateX(-50%);
+}
+.day .content:hover {
+    opacity: .8;
+}
+.chart .day:hover .amount  {
+   display: flex;
 }
 .chart .day::after {
     content: attr(data-day);
@@ -94,22 +109,15 @@ body {
     transform: translateX(-50%);
     color: var(--mid-brown);
 }
-.chart .day:hover .amount  {
-    opacity: 1;
-}
 hr {
     background-color: var(--pale-orange);
     height: 2px;
     border: none;
-    margin: 20px 0;
+    margin: 10px 0 20px;
 }
 .footer {
     display: flex;
     justify-content: space-between;
-}
-.total span {
-    font-size: 14px;
-    color: var(--mid-brown);
 }
 .total h3 {
     margin: 0;
@@ -126,16 +134,17 @@ hr {
     display: block;
     font-weight: bold;
 }
-.tax p {
-    margin:0;
-    font-size: 14px;
+.total p , 
+.tax p 
+{
+    font-size: 12px;
     color: var(--mid-brown);
+    margin:0;
 }
-
 /* Media */
  /* Small devices (landscape phones, 576px and above till next break point) */
 @media (min-width: 376px) { 
     .bar-chart {
-        width: 308px;
+        width: 320px;
     }
- }
+}
